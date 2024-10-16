@@ -3,44 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wiki Index</title>
+    <title>Bombsite Wikipedia</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f4f4f4;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
             margin: 0;
             padding: 20px;
         }
         h1 {
-            color: #333;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
         }
         .button {
             display: inline-block;
             padding: 15px 25px;
             margin: 10px;
             font-size: 16px;
-            color: white;
+            color: #ffffff;
             background-color: #007BFF;
             border: none;
             border-radius: 5px;
             text-decoration: none;
             transition: background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
         .button:hover {
             background-color: #0056b3;
+        }
+        .section-preview {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #2a2a2a;
+            border-radius: 5px;
+        }
+        .section-preview img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #b0b0b0;
         }
     </style>
 </head>
 <body>
 
-    <h1>Wiki Index</h1>
-    <p>Welcome to the Wiki! Click on the buttons below to explore different sections:</p>
+    <h1>Bombsite Wikipedia</h1>
+    <p>Welcome to the Wiki! Take a look at our favourite pages:</p>
 
-    <a href="section1.html" class="button">Section 1</a>
-    <a href="section2.html" class="button">Section 2</a>
-    <a href="section3.html" class="button">Section 3</a>
-    <a href="section4.html" class="button">Section 4</a>
+    <div>
+        <a href="section1.html" class="button">Section 1</a>
+        <a href="section2.html" class="button">Section 2</a>
+        <a href="section3.html" class="button">Section 3</a>
+        <a href="section4.html" class="button">Section 4</a>
+        <a href="section5.html" class="button">Section 5</a>
+        <a href="section6.html" class="button">Section 6</a>
+    </div>
+
+    <div class="section-preview">
+        <h2>FEATURES (WILL WE USE THIS?)</h2>
+        <div>
+            <h3>Section 5</h3>
+            <img src="image5.jpg" alt="idk">
+            <p>blah blah blah</p>
+        </div>
+        <div>
+            <h3>Section 6</h3>
+            <img src="image6.jpg" alt="idk">
+            <p>blah blah blah</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Bombsite Wikipedia. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
