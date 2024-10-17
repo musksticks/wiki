@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="assets/logo.ico" type="image/x-icon">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bombsite Wikipedia</title>
     <style>
         body {
@@ -16,6 +16,50 @@
             align-items: center;
             justify-content: center;
             height: 100vh; /* Full height to center content */
+            position: relative; /* Allow absolute positioning of search bar */
+        }
+
+        .search-container {
+            position: fixed; /* Fixed position */
+            top: 10px; /* Stick to the top */
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto; /* Centering */
+            z-index: 10; /* Ensure it appears above other elements */
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ffd700;
+            border-radius: 5px;
+            background-color: #2a2a2a;
+            color: #e0e0e0;
+            font-size: 1em;
+        }
+
+        .search-results {
+            position: absolute;
+            top: 45px; /* Below the search input */
+            width: 100%;
+            max-width: 600px;
+            background-color: #2a2a2a;
+            border: 2px solid #ffd700;
+            border-radius: 5px;
+            z-index: 10;
+            display: none; /* Hidden by default */
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .search-result {
+            padding: 10px;
+            color: #e0e0e0;
+            cursor: pointer;
+        }
+
+        .search-result:hover {
+            background-color: #444;
         }
 
         h1 {
@@ -76,10 +120,14 @@
         }
 
         footer {
-            margin-top: 20px;
+            position: fixed; /* Fix the footer to the bottom */
+            bottom: 20px; /* Adjust this value to move it up or down */
+            left: 0;
+            width: 100%;
+            text-align: center; /* Center the text */
             font-size: 0.9em;
             color: #b0b0b0;
-        }
+                }
 
         @media (max-width: 600px) {
             h1 {
@@ -98,10 +146,15 @@
 </head>
 <body>
     
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search for sections..." onkeyup="searchSections()">
+        <div class="search-results" id="search-results"></div>
+    </div>
+
     <h1>Bombsite Wikipedia</h1>
     <p>Welcome to the Wiki! Take a look at our favorite pages:</p>
 
-    <div class="sections-container">
+    <div class="sections-container" id="sections-container">
         <a href="pages/Prapor/" class="section">
             <h3>Section 1</h3>
             <p>Prapor</p>
@@ -125,6 +178,42 @@
     <footer>
         <p>&copy; 2024 Bombsite Wikipedia. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Define sections and their corresponding URLs
+        const sections = [
+            { title: "Prapor", url: "pages/Prapor/" },
+            { title: "Therapist", url: "pages/Therapist/" },
+            { title: "Fence", url: "pages/Fence/" },
+            { title: "Lightkeeper", url: "pages/Lightkeeper/" },
+            { title: "Lolzard", url: "pages/Lolzard/" },
+            // Add other sections here as needed
+        ];
+
+        function searchSections() {
+            const input = document.getElementById('search-bar');
+            const filter = input.value.toLowerCase();
+            const resultsContainer = document.getElementById('search-results');
+            
+            resultsContainer.innerHTML = ''; // Clear previous results
+            let hasResults = false;
+
+            sections.forEach(section => {
+                if (section.title.toLowerCase().includes(filter) && filter) {
+                    hasResults = true;
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'search-result';
+                    resultItem.textContent = section.title;
+                    resultItem.onclick = () => {
+                        window.location.href = section.url; // Redirect to section page
+                    };
+                    resultsContainer.appendChild(resultItem);
+                }
+            });
+
+            resultsContainer.style.display = hasResults ? 'block' : 'none'; // Show or hide results
+        }
+    </script>
 
 </body>
 </html>
