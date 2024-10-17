@@ -21,6 +21,12 @@
             font-size: 18px;
             margin-bottom: 30px;
         }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px; /* Adjust as needed */
+        }
         .button {
             display: inline-block;
             padding: 15px 25px;
@@ -37,17 +43,59 @@
         .button:hover {
             background-color: #0056b3;
         }
-        .section-preview {
-            margin: 40px 0;
-            padding: 20px;
+
+        /* Container for horizontal scroll */
+        .sections-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 10px;
+            justify-content: center; /* Center the sections */
+            padding: 10px 0; /* Optional padding for aesthetics */
+        }
+
+        /* Individual sections */
+        .section {
+            flex: 0 0 20%; /* Adjust this percentage to control width */
             background-color: #2a2a2a;
             border-radius: 5px;
+            padding: 20px;
+            scroll-snap-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            text-align: center;
         }
-        .section-preview img {
+
+        .section img {
             max-width: 100%;
             border-radius: 5px;
             margin-bottom: 15px;
         }
+
+        .description {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #b0b0b0; /* Lighter color for contrast */
+        }
+
+        .scroll-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .scroll-button {
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .scroll-button:hover {
+            background-color: #0056b3;
+        }
+
         footer {
             margin-top: 40px;
             font-size: 14px;
@@ -57,35 +105,51 @@
 </head>
 <body>
 
+    <!-- <img src="logo.png" alt="Logo" class="logo"> --> <!-- Add your logo image here -->
+    
     <h1>Bombsite Wikipedia</h1>
     <p>Welcome to the Wiki! Take a look at our favourite pages:</p>
 
-    <div>
-        <a href="section1.html" class="button">Section 1</a>
-        <a href="section2.html" class="button">Section 2</a>
-        <a href="section3.html" class="button">Section 3</a>
-        <a href="section4.html" class="button">Section 4</a>
-        <a href="section5.html" class="button">Section 5</a>
-        <a href="section6.html" class="button">Section 6</a>
+    <div class="sections-container">
+        <div class="section">
+            <h3>Section 1 with picture</h3>
+            <img src="image1.jpg" alt="Section 1 Image">
+            <p>Description for Section 1</p>
+        </div>
+        <div class="section">
+            <h3>Section 2 with picture</h3>
+            <img src="image2.jpg" alt="Section 2 Image">
+            <p>Description for Section 2</p>
+        </div>
+        <div class="section">
+            <h3>Section 3 with picture</h3>
+            <img src="image3.jpg" alt="Section 3 Image">
+            <p>Description for Section 3</p>
+        </div>
+        <div class="section">
+            <h3>Section 4 with picture</h3>
+            <img src="image4.jpg" alt="Section 4 Image">
+            <p>Description for Section 4</p>
+        </div>
     </div>
 
-    <div class="section-preview">
-        <h2>FEATURES (WILL WE USE THIS?)</h2>
-        <div>
-            <h3>Section 5</h3>
-            <img src="image5.jpg" alt="idk">
-            <p>blah blah blah</p>
-        </div>
-        <div>
-            <h3>Section 6</h3>
-            <img src="image6.jpg" alt="idk">
-            <p>blah blah blah</p>
-        </div>
-    </div>
+    <p class="description">Bombsite Wikipedia is your go-to resource for everything related to bomb sites in competitive gaming. Explore detailed articles, images, and descriptions of each bomb site.</p>
 
     <footer>
         <p>&copy; 2024 Bombsite Wikipedia. All rights reserved.</p>
     </footer>
+
+    <script>
+        const container = document.querySelector('.sections-container');
+
+        function scrollLeft() {
+            container.scrollBy({ left: -300, behavior: 'smooth' });
+        }
+
+        function scrollRight() {
+            container.scrollBy({ left: 300, behavior: 'smooth' });
+        }
+    </script>
 
 </body>
 </html>
