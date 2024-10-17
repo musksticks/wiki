@@ -129,6 +129,12 @@
             color: #b0b0b0;
                 }
 
+        @media (max-width: 400px) {
+            .section h3 {
+                font-size: 1.2em;
+            }
+        }
+
         @media (max-width: 600px) {
             h1 {
                 font-size: 2em;
@@ -143,11 +149,12 @@
             }
         }
     </style>
+    <script src="members.js" defer></script>
 </head>
 <body>
     
     <div class="search-container">
-        <input type="text" id="search-bar" placeholder="Search for sections..." onkeyup="searchSections()">
+        <input type="text" id="search-bar" placeholder="Search for members..." onkeyup="searchSections()">
         <div class="search-results" id="search-results"></div>
     </div>
 
@@ -155,19 +162,19 @@
     <p>Welcome to the Wiki! Take a look at our favorite pages:</p>
 
     <div class="sections-container" id="sections-container">
-        <a href="pages/Members/" class="section">
+        <a href="Members/" class="section">
             <h3>Members</h3>
             <p>Current Members of Bombsite</p>
         </a>
-        <a href="pages/Games/" class="section">
+        <a href="Games/" class="section">
             <h3>Games</h3>
             <p>Some games that we play</p>
         </a>
-        <a href="pages/Events/" class="section">
+        <a href="Events/" class="section">
             <h3>Events</h3>
             <p>Previous / Future events</p>
         </a>
-        <a href="pages/History/" class="section">
+        <a href="History/" class="section">
             <h3>History</h3>
             <p>Some history about bombsite</p>
         </a>
@@ -180,16 +187,6 @@
     </footer>
 
     <script>
-        // Define sections and their corresponding URLs
-        const sections = [
-            { title: "Lolzard", url: "Members/Lolzard/" },
-            { title: "MartP", url: "Members/MartP/" },
-            { title: "Nightowlofdoom", url: "Members/Nightowlofdoom/" },
-            { title: "Placeholder", url: "Members/Placeholder/" },
-            { title: "Placeholder", url: "Members/Placeholder/" },
-            // Add other sections here as needed
-        ];
-
         function searchSections() {
             const input = document.getElementById('search-bar');
             const filter = input.value.toLowerCase();
@@ -198,14 +195,14 @@
             resultsContainer.innerHTML = ''; // Clear previous results
             let hasResults = false;
 
-            sections.forEach(section => {
-                if (section.title.toLowerCase().includes(filter) && filter) {
+            members.forEach(member => {
+                if (member.title.toLowerCase().includes(filter) && filter) {
                     hasResults = true;
                     const resultItem = document.createElement('div');
                     resultItem.className = 'search-result';
-                    resultItem.textContent = section.title;
+                    resultItem.textContent = member.title;
                     resultItem.onclick = () => {
-                        window.location.href = section.url; // Redirect to section page
+                        window.location.href = member.url; // Redirect to member profile
                     };
                     resultsContainer.appendChild(resultItem);
                 }
