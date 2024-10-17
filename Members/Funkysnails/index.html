@@ -7,27 +7,107 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #121212; /* Dark background */
-            color: #e0e0e0; /* Light text color */
+            background-color: #121212;
+            color: #e0e0e0;
             margin: 0;
             padding: 0;
         }
 
         header {
             background-color: #2a2a2a;
-            padding: 20px;
-            text-align: center;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .menu-bar {
+            position: absolute;
+            left: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hamburger {
+            display: inline-block;
+            cursor: pointer;
+            margin-right: 15px;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: #ffd700;
+            margin: 5px 0;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 200px;
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding: 10px;
+            border-bottom: 1px solid #ffd700;
+        }
+
+        .menu ul li a {
+            color: #ffd700;
+            text-decoration: none;
+            display: block;
+        }
+
+        .menu ul li a:hover {
+            background-color: #333333;
+        }
+
+        .home-button {
+            display: flex;
+            align-items: center;
+            margin-left: 0px; /* Space from hamburger */
+        }
+
+        .home-button img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%; /* Curved logo */
+        }
+
+        .home-button a {
+            color: #ffd700;
+            text-decoration: none;
+            font-size: 1.5em;
+            margin-left: 5px;
+            display: flex; /* Center align the text */
+            align-items: center; /* Center the text vertically */
+        }
+
+        .home-button a:hover {
+            text-decoration: underline;
         }
 
         h1 {
             color: #ffd700;
-            font-size: 2.5em; /* Main title size */
+            font-size: 2.5em;
             margin: 0;
             text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
 
         .content {
-            max-width: 800px; /* Limit content width */
+            max-width: 800px;
             margin: 20px auto;
             padding: 20px;
             background-color: #2a2a2a;
@@ -37,40 +117,40 @@
         }
 
         .main {
-            flex: 3; /* Main content area */
-            margin-right: 20px; /* Space between content and sidebar */
+            flex: 3;
+            margin-right: 20px;
         }
 
         .sidebar {
-            flex: 1; /* Sidebar area */
+            flex: 1;
             border-radius: 10px;
-            padding: 0; /* No padding for the sidebar to fit the photo */
+            padding: 0;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
 
         .sidebar img {
-            width: 100%; /* Make the image responsive */
-            border-top-left-radius: 10px; /* Rounded corners */
-            border-top-right-radius: 10px; /* Rounded corners */
+            width: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
         }
 
         h2 {
             color: #ffd700;
-            font-size: 1.5em; /* Reduced size for section headings */
+            font-size: 1.5em;
             margin-top: 10px;
-            text-align: center; /* Center align headings */
+            text-align: center;
         }
 
         h3 {
-            color: #ffd700; /* Name of the member */
-            font-size: 2em; /* Member name size */
+            color: #ffd700;
+            font-size: 2em;
             margin: 10px 0;
         }
 
         p {
-            font-size: 1.1em; /* Reduced size for paragraphs */
+            font-size: 1.1em;
             margin: 10px 0;
-            padding: 0 10px; /* Padding for text */
+            padding: 0 10px;
         }
 
         footer {
@@ -95,13 +175,31 @@
 <body>
 
 <header>
+    <div class="menu-bar">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="home-button">
+            <a href="https://wiki.musk.ovh">
+                <img src="../../assets/logo.png" alt="Bombsite Logo">
+                <span>‎ Home</span>
+            </a>
+        </div>
+    </div>
     <h1>Bombsite Wikipedia</h1>
 </header>
 
+<div class="menu" id="menu">
+    <ul id="memberList">
+        <!-- Member names will be dynamically loaded here -->
+    </ul>
+</div>
+
 <div class="content">
     <div class="main">
-        <h3>Member Name</h3> <!-- Display the member's name here -->
-
+        <h3>Member Name</h3>
         <h2>Biography</h2>
         <p>Insert a brief biography of the member here. Include their background, interests, and role within Bombsite.</p>
 
@@ -119,12 +217,10 @@
     </div>
 
     <div class="sidebar">
-        <img src="../../assets/test.jpg" alt="Member Large Photo"> <!-- Large photo at the top -->
+        <img src="../../assets/test.jpg" alt="Member Large Photo">
 
         <h2>Description</h2>
         <p>Short description or tagline about the member. This can be a summary of their personality or role.</p>
-
-
     </div>
 </div>
 
@@ -132,6 +228,38 @@
     <p>&copy; 2024 Bombsite Wikipedia. All rights reserved.</p>
     <a href="index.html">Back to Members List</a>
 </footer>
+
+<!-- Include the members.js file -->
+<script src="../../members.js"></script>
+
+<script>
+// Function to toggle the hamburger menu
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    if (menu.style.display === 'block') {
+        menu.style.display = 'none';
+    } else {
+        menu.style.display = 'block';
+    }
+}
+
+// Function to load members into the menu
+function loadMembers() {
+    const memberList = document.getElementById('memberList');
+    
+    members.forEach(member => {
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = `https://wiki.musk.ovh/${member.url}`;
+        link.textContent = member.title;
+        listItem.appendChild(link);
+        memberList.appendChild(listItem);
+    });
+}
+
+// Call the function to load members when the page loads
+window.onload = loadMembers;
+</script>
 
 </body>
 </html>
