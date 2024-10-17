@@ -56,17 +56,23 @@
 
         /* Individual sections */
         .section {
-            flex: 0 0 20%; /* Adjust this percentage to control width */
+            flex: 1 0 20%; /* Allow sections to grow, with a minimum width of 20% */
+            max-width: 450px; /* Optional max-width to limit size */
             background-color: #2a2a2a;
             border-radius: 5px;
             padding: 20px;
             scroll-snap-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             text-align: center;
+            cursor: pointer; /* Change cursor to pointer */
+            text-decoration: none; /* Remove underline */
+            color: inherit; /* Inherit text color from parent */
         }
 
         .section img {
-            max-width: 100%;
+            width: 100%; /* Make image take the full width of the section */
+            height: 200px; /* Set a fixed height */
+            object-fit: cover; /* Cover the area while maintaining aspect ratio */
             border-radius: 5px;
             margin-bottom: 15px;
         }
@@ -75,25 +81,6 @@
             margin-top: 20px;
             font-size: 18px;
             color: #b0b0b0; /* Lighter color for contrast */
-        }
-
-        .scroll-buttons {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        .scroll-button {
-            background-color: #007BFF;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .scroll-button:hover {
-            background-color: #0056b3;
         }
 
         footer {
@@ -105,32 +92,32 @@
 </head>
 <body>
 
-    <!-- <img src="logo.png" alt="Logo" class="logo"> --> <!-- Add your logo image here -->
+    <img src="assets/logo.png" alt="Logo" class="logo"> <!-- Add your logo image here -->
     
     <h1>Bombsite Wikipedia</h1>
     <p>Welcome to the Wiki! Take a look at our favourite pages:</p>
 
     <div class="sections-container">
-        <div class="section">
-            <h3>Section 1 with picture</h3>
-            <img src="image1.jpg" alt="Section 1 Image">
-            <p>Description for Section 1</p>
-        </div>
-        <div class="section">
-            <h3>Section 2 with picture</h3>
-            <img src="image2.jpg" alt="Section 2 Image">
-            <p>Description for Section 2</p>
-        </div>
-        <div class="section">
-            <h3>Section 3 with picture</h3>
-            <img src="image3.jpg" alt="Section 3 Image">
-            <p>Description for Section 3</p>
-        </div>
-        <div class="section">
-            <h3>Section 4 with picture</h3>
-            <img src="image4.jpg" alt="Section 4 Image">
-            <p>Description for Section 4</p>
-        </div>
+        <a href="sections/section1.html" class="section">
+            <h3>Placeholder</h3>
+            <img src="assets/placeholder.jpg" alt="">
+            <p>Placeholder</p>
+        </a>
+        <a href="sections/section2.html" class="section">
+            <h3>Placeholder</h3>
+            <img src="assets/placeholder2.jpg" alt="">
+            <p>Placeholder</p>
+        </a>
+        <a href="sections/section3.html" class="section">
+            <h3>Placeholder</h3>
+            <img src="assets/placeholder3.jpg" alt="">
+            <p>Placeholder</p>
+        </a>
+        <a href="sections/section4.html" class="section">
+            <h3>Placeholder</h3>
+            <img src="assets/placeholder.jpg" alt="">
+            <p>Placeholder</p>
+        </a>
     </div>
 
     <p class="description">Bombsite Wikipedia is your go-to resource for everything related to bomb sites in competitive gaming. Explore detailed articles, images, and descriptions of each bomb site.</p>
