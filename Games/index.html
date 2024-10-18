@@ -88,98 +88,42 @@
 </head>
 <body>
 
-    <h1>Bombsite Games</h1>
+    <h1>
+        <a href="https://wiki.musk.ovh" style="color: #ffd700; text-decoration: none;">
+            Bombsite Games
+        </a>
+    </h1>
     
-    <div class="game-container">
-        <div class="game-box">
-            <a href="https://wiki.musk.ovh/Games/EFT">
-                <img src="../assets/games/eftbackground.jpg" alt="">
-                <div class="game-name">Escape From Tarkov</div>
-            </a>
-        </div>
-        <div class="game-box">
-            <a href="https://wiki.musk.ovh/Games/COH2">
-                <img src="../assets/games/coh2background.jpg" alt="">
-                <div class="game-name">Company of Heroes 2</div>
-            </a>
-        </div>
-        <div class="game-box">
-            <a href="https://wiki.musk.ovh/Games/HOI4">
-                <img src="../assets/games/hoi4.jpg" alt="">
-                <div class="game-name">Hearts of Iron 4</div>
-            </a>
-        </div>
-        <div class="game-box">
-            <a href="https://wiki.musk.ovh/Games/Valorant">
-                <img src="../assets/games/valorant.jpg" alt="">
-                <div class="game-name">Valorant</div>
-            </a>
-        </div>
-        <div class="game-box">
-            <a href="https://wiki.musk.ovh/Games/Minecraft">
-                <img src="../assets/games/minecraft.jpeg" alt="">
-                <div class="game-name">Minecraft</div>
-            </a>
-        </div>
-        <div class="game-box">
-            <a href="https://wiki.musk.ovh/Games/Unturned">
-                <img src="../assets/games/unturned.jpg" alt="">
-                <div class="game-name">Unturned</div>
-            </a>
-        </div>
-        <div class="game-box">
-            <a href="https://wiki.musk.ovh/Games/DST">
-                <img src="../assets/games/dontstarvetogether.jpg" alt="">
-                <div class="game-name">Dont starve Together</div>
-            </a>
-        </div>
-        <div class="game-box">
-            <a href="https://wiki.musk.ovh/Games/Roblox">
-                <img src="../assets/games/roblox.jpg" alt="">
-                <div class="game-name">Roblox</div>
-            </a>
-        </div>
-        <div class="game-box">
-            <a href="https://wiki.musk.ovh/Games/LOL">
-                <img src="../assets/games/lol.jpg" alt="">
-                <div class="game-name">League of Legends</div>
-            </a>
-        </div>
-        <div class="game-box">
-            <a href="https://wiki.musk.ovh/Games/StardewValley">
-                <img src="../assets/games/stardewvalley.jpg" alt="">
-                <div class="game-name">Stardew Valley</div>
-            </a>
-        </div>
-        <div class="game-box">
-            <a href="https://wiki.musk.ovh/Games/ARK">
-                <img src="../assets/games/arksurvivelevolved.jpg" alt="">
-                <div class="game-name">Ark: Survival Evolved</div>
-            </a>
-        </div>
-        <div class="game-box">
-            <a href="https://wiki.musk.ovh/Games/GGS">
-                <img src="../assets/games/ggs.jpg" alt="">
-                <div class="game-name">Guilty Gear Strive</div>
-            </a>
-        </div>
-        <div class="game-box">
-            <a href="https://wiki.musk.ovh/Games/MGR">
-                <img src="../assets/games/mgr.jpg" alt="">
-                <div class="game-name">Metal Gear Rising: Revengeance</div>
-            </a>
-        </div>
-        <div class="game-box">
-            <a href="https://wiki.musk.ovh/Games/">
-                <img src="../assets/games/placeholder.jpg" alt="">
-                <div class="game-name">Five nights at Mina's</div>
-            </a>
-        </div>
+    <div class="game-container" id="game-container">
+        <!-- Game boxes will be generated here -->
     </div>
+
     <footer>
         <p>&copy; 2024 Bombsite Wikipedia. All rights reserved.</p>
         <a href="https://wiki.musk.ovh">Back to Index</a>
     </footer>
+
+    <script src="../games.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const gameContainer = document.getElementById('game-container');
+            const base = "https://wiki.musk.ovh/Games/";
+
+            games.forEach(game => {
+                const gameBox = document.createElement('div');
+                gameBox.className = 'game-box';
+
+                gameBox.innerHTML = `
+                    <a href="${base + game.url}">
+                        <img src="../assets/games/${game.image}" alt="">
+                        <div class="game-name">${game.title}</div>
+                    </a>
+                `;
+
+                gameContainer.appendChild(gameBox);
+            });
+        });
+    </script>
 
 </body>
 </html>

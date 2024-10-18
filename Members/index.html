@@ -106,7 +106,7 @@
 
             members.forEach(member => {
                 const link = document.createElement('a');
-                link.href = `https://wiki.musk.ovh/${member.url}`;
+                link.href = `${member.url}`;
                 link.textContent = member.title;
                 membersList.appendChild(link);
             });
