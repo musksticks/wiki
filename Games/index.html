@@ -3,70 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Section 2</title>
+    <title>Bombsite Games</title>
     <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #121212; /* Dark background */
-            color: #e0e0e0; /* Light text color */
-            margin: 0;
-            padding: 20px;
+            background-color: #121212;
+            color: #e0e0e0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            min-height: 100vh; /* Full height */
         }
         h1 {
-            color: #ffd700; /* Gold color for headings */
-            margin-bottom: 20px;
+            color: #ffd700;
+            margin: 0;
             text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-        }
-        p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
+            font-size: 2.5em;
+            background-color: #2a2a2a; /* Gray background */
+            width: 100%;
             text-align: center;
+            padding: 20px;
+            border-radius: 10px;
         }
-        .content {
-            max-width: 800px; /* Limit content width */
-            text-align: left; /* Left-align text for readability */
+        .game-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%; /* Make sure container spans full width */
+            padding: 20px;
         }
-        a {
-            text-decoration: none;
-            color: #ffd700; /* Gold color for links */
-            padding: 10px 15px;
-            border: 2px solid #ffd700; /* Gold border */
+        .game-box {
+            position: relative;
+            width: 100%;
+            padding-top: 50%; /* 4:3 Aspect ratio based on width */
+            overflow: hidden;
+            border: 2px solid #ffd700;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        .game-box img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(5px); /* Blurred background */
+            z-index: 1;
+        }
+        .game-box .game-name {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            color: #ffd700;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
             border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        a:hover {
-            background-color: #ffd700; /* Gold background on hover */
-            color: #121212; /* Dark text on gold background */
         }
         footer {
-            margin-top: 40px;
+            margin-top: 30px;
             font-size: 0.9em;
             color: #b0b0b0;
+            text-align: center;
+            background-color: #2a2a2a; /* Gray background */
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        a {
+            color: #ffd700;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
 
-    <h1>Section ?: Placeholder</h1>
-    <div class="content">
-        <p>This section provides detailed information about the ??? in the Bombsite server. Here you can include historical context, key features, and any relevant lore.</p>
-        <h2>Overview</h2>
-        <p>The ??? is an essential character, providing medical supplies and treatment for players. Understanding her role can greatly enhance your gameplay experience.</p>
-        <h2>Services</h2>
-        <p>Details about the services offered, such as healing, item trading, and any unique interactions.</p>
-        <h2>Tips and Tricks</h2>
-        <p>Strategies on how to best utilize the Therapist for your benefit, including timing and resource management.</p>
+    <h1>Bombsite Games</h1>
+    
+    <div class="game-container">
+        <div class="game-box">
+            <a href="https://wiki.musk.ovh/Games/EFT">
+                <img src="../assets/games/eftbackground.jpg" alt="">
+                <div class="game-name">Escape From Tarkov</div>
+            </a>
+        </div>
+        <div class="game-box">
+            <a href="https://wiki.musk.ovh/Games/COH2">
+                <img src="../assets/games/coh2background.jpg" alt="">
+                <div class="game-name">Company of Heroes 2</div>
+            </a>
+        </div>
+        <div class="game-box">
+            <a href="https://wiki.musk.ovh/Games/HOI4">
+                <img src="../assets/games/hoi4.jpg" alt="">
+                <div class="game-name">Hearts of Iron 4</div>
+            </a>
+        </div>
+        <div class="game-box">
+            <a href="https://wiki.musk.ovh/Games/Valorant">
+                <img src="../assets/games/valorant.jpg" alt="">
+                <div class="game-name">Valorant</div>
+            </a>
+        </div>
+        <div class="game-box">
+            <a href="https://wiki.musk.ovh/Games/Minecraft">
+                <img src="../assets/games/minecraft.jpeg" alt="">
+                <div class="game-name">Minecraft</div>
+            </a>
+        </div>
+        <div class="game-box">
+            <a href="https://wiki.musk.ovh/Games/Unturned">
+                <img src="../assets/games/unturned.jpg" alt="">
+                <div class="game-name">Unturned</div>
+            </a>
+        </div>
+        <div class="game-box">
+            <a href="https://wiki.musk.ovh/Games/DST">
+                <img src="../assets/games/dontstarvetogether.jpg" alt="">
+                <div class="game-name">Dont starve Together</div>
+            </a>
+        </div>
+        <div class="game-box">
+            <a href="https://wiki.musk.ovh/Games/Roblox">
+                <img src="../assets/games/roblox.jpg" alt="">
+                <div class="game-name">Roblox</div>
+            </a>
+        </div>
+        <div class="game-box">
+            <a href="https://wiki.musk.ovh/Games/LOL">
+                <img src="../assets/games/lol.jpg" alt="">
+                <div class="game-name">League of Legends</div>
+            </a>
+        </div>
+        <div class="game-box">
+            <a href="https://wiki.musk.ovh/Games/StardewValley">
+                <img src="../assets/games/stardewvalley.jpg" alt="">
+                <div class="game-name">Stardew Valley</div>
+            </a>
+        </div>
+        <div class="game-box">
+            <a href="https://wiki.musk.ovh/Games/ARK">
+                <img src="../assets/games/arksurvivelevolved.jpg" alt="">
+                <div class="game-name">Ark: Survival Evolved</div>
+            </a>
+        </div>
+        <div class="game-box">
+            <a href="https://wiki.musk.ovh/Games/GGS">
+                <img src="../assets/games/ggs.jpg" alt="">
+                <div class="game-name">Guilty Gear Strive</div>
+            </a>
+        </div>
+        <div class="game-box">
+            <a href="https://wiki.musk.ovh/Games/MGR">
+                <img src="../assets/games/mgr.jpg" alt="">
+                <div class="game-name">Metal Gear Rising: Revengeance</div>
+            </a>
+        </div>
+        <div class="game-box">
+            <a href="https://wiki.musk.ovh/Games/">
+                <img src="../assets/games/placeholder.jpg" alt="">
+                <div class="game-name">Five nights at Mina's</div>
+            </a>
+        </div>
     </div>
-    
-    <a href="https://wiki.musk.ovh">Back to Index</a>
-    
     <footer>
         <p>&copy; 2024 Bombsite Wikipedia. All rights reserved.</p>
+        <a href="https://wiki.musk.ovh">Back to Index</a>
     </footer>
 
 </body>

@@ -11,6 +11,7 @@
             color: #e0e0e0;
             margin: 0;
             padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
         header {
@@ -107,7 +108,7 @@
         }
 
         .content {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
             background-color: #2a2a2a;
@@ -135,20 +136,20 @@
         }
 
         h2 {
-            color: #ffd700;
+            color: #ff8800;
             font-size: 1.5em;
             margin-top: 10px;
             text-align: center;
         }
 
         h3 {
-            color: #ffd700;
+            color: #ff8800;
             font-size: 2em;
             margin: 10px 0;
         }
 
         p {
-            font-size: 1.1em;
+            font-size: 1.25em;
             margin: 10px 0;
             padding: 0 10px;
         }
@@ -184,40 +185,46 @@
         <div class="home-button">
             <a href="https://wiki.musk.ovh">
                 <img src="../../assets/logo.png" alt="Bombsite Logo">
-                <span>‎ Home</span>
             </a>
         </div>
     </div>
-    <h1>Bombsite Wikipedia</h1>
+    <h1>
+        <a href="https://wiki.musk.ovh" style="color: #ffd700; text-decoration: none;">
+            Bombsite Wikipedia
+        </a>
+    </h1>
 </header>
 
 <div class="menu" id="menu">
-    <ul id="memberList">
-        <!-- Member names will be dynamically loaded here -->
+    <ul>
+        <li><a href="Members/">Members</a></li>
+        <li><a href="Games/">Games</a></li>
+        <li><a href="Events/">Events</a></li>
+        <li><a href="History/">History</a></li>
     </ul>
 </div>
 
 <div class="content">
     <div class="main">
-        <h3>Member Name</h3>
+        <h3><u>NaMe (also known as Alex, Steelix, Neural Spider, Neural Sped)</u></h3>
         <h2>Biography</h2>
-        <p>Insert a brief biography of the member here. Include their background, interests, and role within Bombsite.</p>
+        <p>This creature tends to play various games on his own while staying completely silent in VC. He also has a tendency to randomly leave Discord VC without uttering a single word. Mediocre at video games, can be funny at times. (Partial <a href="https://wiki.musk.ovh/Members/Lolzard">Lolzard</a> Boyfriend).</p>
 
         <h2>Games Played</h2>
-        <p>List the games this member participates in, along with any notable achievements.</p>
+        <p>Etiam luctus felis nisl, eu iaculis orci viverra nec. Praesent vulputate dictum lectus nec tincidunt. Nam risus ex, tempus et velit suscipit, euismod sodales dui. Integer consectetur pharetra rhoncus. Donec venenatis ornare volutpat. Integer finibus posuere leo sed blandit. Curabitur arcu orci, placerat ut vestibulum sit amet, mollis vitae quam. Donec dignissim nisi at odio molestie porta. Aenean malesuada egestas felis, at ultrices metus finibus nec. Curabitur eu laoreet nulla. Nunc ultrices, ipsum ut mollis rutrum, neque orci vulputate tortor, vel ultricies tortor mi vitae dui. Phasellus tellus turpis, interdum ornare porta eget, convallis id nisl.</p>
 
         <h2>Events</h2>
-        <p>Detail any events that the member has participated in, including dates and roles.</p>
+        <p>Maecenas suscipit lobortis placerat. Integer placerat gravida eros, sed sodales felis porta eget. Proin consequat, sem ut efficitur porta, justo nunc gravida neque, nec vulputate mauris quam at sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer ornare pulvinar interdum. Pellentesque ac neque ut ligula tempor suscipit. Fusce mollis quam sed lacus dignissim, eget blandit neque mattis. Duis suscipit maximus dui, at ultricies risus tempor ac. Curabitur vitae diam volutpat, pellentesque eros in, bibendum nisl. Nam mi orci, aliquam et lectus a, posuere luctus justo. Quisque tristique nunc eu nulla viverra, in posuere metus euismod. </p>
 
         <h2>History</h2>
-        <p>Detail any history that the member has, can be anything they have done or accomplished.</p>
+        <p>Mauris ullamcorper porta imperdiet. Suspendisse porta eros ut quam eleifend, in euismod arcu aliquet. Aliquam finibus dignissim elit, a aliquet quam fringilla et. Nam condimentum nisi ut ipsum dignissim hendrerit. Curabitur rutrum nisi in tellus condimentum tempor. Etiam tellus ante, accumsan vitae ante et, pulvinar luctus purus. Proin arcu nisi, imperdiet eget magna id, feugiat pretium arcu. In mattis quam at sem tristique gravida. Duis interdum vulputate metus non ullamcorper. Phasellus porttitor, lorem ac sollicitudin accumsan, ligula erat faucibus felis, a scelerisque lacus ex non quam. Proin sit amet ligula a lacus gravida pellentesque. Ut sit amet lorem eget quam mattis laoreet.</p>
 
         <h2>Fun Facts</h2>
-        <p>Share some interesting trivia about the member that fans might enjoy.</p>
+        <p>Nam eu dui lacinia, posuere lectus vel, mattis sapien. Nunc quis condimentum diam. Etiam a congue justo, a vehicula massa. Nunc maximus bibendum tortor a pulvinar. Integer ligula nisi, vehicula eget lobortis dapibus, sollicitudin nec odio. Quisque id gravida mi. In pulvinar massa tortor, ut elementum libero molestie eget. In quis vestibulum ex. Proin semper tortor nec tellus venenatis congue. Pellentesque consequat ante a placerat fermentum. Phasellus dictum nibh sem, a molestie dolor dapibus non. Fusce rhoncus pharetra venenatis. Donec in augue viverra, venenatis velit quis, rhoncus dolor. Morbi felis sem, sagittis at augue in, malesuada scelerisque arcu. Quisque quis ornare sapien, at rutrum elit. Aenean non leo ac tortor imperdiet sagittis. </p>
     </div>
 
     <div class="sidebar">
-        <img src="../../assets/test.jpg" alt="Member Large Photo">
+        <img src="../../assets/steelix.jpg" alt="Member Large Photo">
 
         <h2>Description</h2>
         <p>Short description or tagline about the member. This can be a summary of their personality or role.</p>
@@ -226,14 +233,14 @@
 
 <footer>
     <p>&copy; 2024 Bombsite Wikipedia. All rights reserved.</p>
-    <a href="index.html">Back to Members List</a>
+    <a href="https://wiki.musk.ovh/Members">Back to Members List</a>
 </footer>
 
 <!-- Include the members.js file -->
 <script src="../../members.js"></script>
 
 <script>
-// Function to toggle the hamburger menu
+// Function to toggle the menu display
 function toggleMenu() {
     const menu = document.getElementById('menu');
     if (menu.style.display === 'block') {
@@ -242,6 +249,12 @@ function toggleMenu() {
         menu.style.display = 'block';
     }
 }
+
+// Call the function to load members when the page loads
+window.onload = function() {
+    loadMembers();
+    document.getElementById('menu').style.display = 'none'; // Hide menu initially
+};
 
 // Function to load members into the menu
 function loadMembers() {
@@ -256,9 +269,6 @@ function loadMembers() {
         memberList.appendChild(listItem);
     });
 }
-
-// Call the function to load members when the page loads
-window.onload = loadMembers;
 </script>
 
 </body>
